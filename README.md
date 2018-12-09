@@ -1,4 +1,4 @@
-This is a project anylysing text from file
+This is a project anylyzing text from file
 
 
 Napisz program, który wczyta tekst z pliku.
@@ -16,4 +16,4 @@ Program przeanalizuje tekst i poda:
 
 Dodatkowo na podstawie rozkładu częstotliwości liter program może postarać się ocenić w jakim języku został napisany.
 
-Ponadto może porównać własne wyniki z serwisem DetectLanguage.com
+Ponadto może porównać własne wyniki z serwisem [DetectLanguage.com](DetectLanguage.com)
