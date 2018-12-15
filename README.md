@@ -1,19 +1,23 @@
-This is a project anylyzing text from file
+#This is a project anylyzing text from file
 
 
 Napisz program, który wczyta tekst z pliku.
 
 Program przeanalizuje tekst i poda:
 
--Liczbę słów.
+* Liczbę słów.
 
--10 najbardziej popularnych słów.
+* 10 najbardziej popularnych słów.
 
--Rozkład częstotliwości liter.
+* Rozkład częstotliwości liter.
 
--10 najdłuższych słów które pojawiły się w tekście tylko raz
+* 10 najdłuższych słów które pojawiły się w tekście tylko raz
 
 
-Dodatkowo na podstawie rozkładu częstotliwości liter program może postarać się ocenić w jakim języku został napisany.
+Dodatkowo na podstawie rozkładu częstotliwości liter program może
+postarać się ocenić w jakim języku został napisany.
 
-Ponadto może porównać własne wyniki z serwisem [DetectLanguage.com](DetectLanguage.com)
+Ponadto może porównać własne wyniki z serwisem:
+[DetectLanguage.com](DetectLanguage.com)
+
+[validator online](http://ewalidator.pl/generator-numeru-dowodu-osobistego)
