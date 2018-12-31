@@ -2,6 +2,7 @@ package commandline;
 
 import analyzer.Analyzer;
 import analyzer.MultiAnalyzer;
+import analyzer.TopTenLongestWords;
 import analyzer.WordCountAnalyzer;
 import picocli.CommandLine.*;
 
@@ -9,12 +10,14 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.Stream;
 
 /**
  * Created by Grzegorz Chrzaszczyk on 09-12-2018  01:32 PM
  */
 public class CommandLineApp {
+
+    @Parameters(index = "0", description = "File to process.")
+    private File file;
 
     @Option(names = {"-V", "--version"}, versionHelp = true, description = "display version info")
     boolean versionInfoRequested;
@@ -22,21 +25,24 @@ public class CommandLineApp {
     @Option(names = {"-v", "--verbose"}, description = "Be verbose.")
     private boolean verbose = false;
 
-    @Parameters(index = "0", description = "File to process.")
-    private File file;
+
 
     public void run() throws Exception {
 
         if (versionInfoRequested) System.out.println("Version:1.0.0");
         if (verbose) System.out.println("(verbose)");
 
-        System.out.println("\nAnalyzing file: " + file.getAbsolutePath() + " |OS:" + System.getProperty("os.name") + "\n");
+        System.out.println("\nAnalyzing file: " + file.getAbsolutePath() + "\t| OS:" + System.getProperty("os.name") + "\n");
 
-        WordCountAnalyzer wc = new WordCountAnalyzer();
         String str = readFileAsString(file.getAbsolutePath());
 
+        ArrayList<Analyzer> analyzers = new ArrayList<>();
+        analyzers.add(new WordCountAnalyzer());
+        analyzers.add(new TopTenLongestWords());
+        MultiAnalyzer multiAnalyzer = new MultiAnalyzer(analyzers);
 
-        System.out.println("1.Unique words [Map]: " + wc.analyze(str) + "\n\n\n");
+        multiAnalyzer.performAnalyzis(str);
+        multiAnalyzer.showResult();
 
 
 
@@ -44,6 +50,10 @@ public class CommandLineApp {
 
 
 
+
+//        System.out.println("1.Unique words [Map]: " + wc.analyze(str) + "\n\n\n");
+
+/*
         BufferedReader br = new BufferedReader(new FileReader(file));
         String st;
         int linesCount = 0;
@@ -58,10 +68,8 @@ public class CommandLineApp {
         }
 
         System.out.println("Words count = " + wordsCount);
+*/
 
-
-        strings
-                .stream();
 //                .forEach(System.out::println);
 
 //        strings.forEach(System.out::println);
@@ -69,15 +77,15 @@ public class CommandLineApp {
 
 //        InputStream targetStream = new FileInputStream(file);
 
-//        ArrayList<Analyzer> analyzers = new ArrayList<>();
-//        analyzers.add(new WordCountAnalyzer());
-//        //..
-//        MultiAnalyzer multi = new MultiAnalyzer(analyzers);
+
 
 
     } //END run()
 
     public static String readFileAsString(String fileName) throws Exception {
+
+        if (Files.notExists(Paths.get(fileName)))
+            return ("File: " + fileName + " not exists");
         String data = "";
         data = new String(Files.readAllBytes(Paths.get(fileName)));
         return data;

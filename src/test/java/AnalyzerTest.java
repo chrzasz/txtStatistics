@@ -10,10 +10,10 @@ import static org.junit.Assert.assertEquals;
  * Created by Grzegorz Chrzaszczyk on 09-12-2018  03:40 PM
  */
 
-public class WordCountAnalyzerTest {
+public class AnalyzerTest {
 
     @Test
-    public void analyzeTest() {
+    public void WordCountTest() {
         WordCountAnalyzer wordCountAnalyzer = new WordCountAnalyzer();
         String test = "Ala has cat ala";
         Map<String, Integer> mapValues = new HashMap<>();

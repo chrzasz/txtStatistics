@@ -7,17 +7,27 @@ import java.util.ArrayList;
  */
 public class MultiAnalyzer {
 
-    private final ArrayList<Analyzer> analyzers;
+  private ArrayList<Analyzer> analyzers;
 
-    MultiAnalyzer(ArrayList<Analyzer> analyzers) {
-        this.analyzers = analyzers;
+
+  public MultiAnalyzer(ArrayList<Analyzer> analyzers) {
+    this.analyzers = analyzers;
+  }
+
+  public void performAnalyzis(String text) {
+    for (Analyzer analizer : analyzers) {
+      analizer.analyze(text);
+    }
+  }
+
+  public void showResult() {
+    for (Analyzer analizer : analyzers) {
+      System.out.println("Result: " + analizer);
     }
 
-    public void performAnalyzis(String text) {
-        for (Analyzer analizer : analyzers) {
-            analizer.analyze(text);
-        }
-    }
+  }
+
+
 
 
 }
