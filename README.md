@@ -66,4 +66,55 @@ NUMBER OF WORDS: 68367
 10 LONGEST WORDS USED ONLY ONCE: niebezpieczeństwach, najprzykładniejszy, białopiotrowiczowi, nierozstrzygniony, niebezpieczeństwa, białopiotrowiczem, 
 najstraszniejsza, najprzywiązańsza, najpiękniejszego, dźwięcznostrunne
 ```
-:+1:
+
+sample output:
+```
+C:\Users\admin\IdeaProjects\txtStatistics\build\libs>java -jar txtStatistics-1.0-SNAPSHOT.jar pt.txt -v -V
+Version:1.0.0
+Analyzing file: C:\Users\admin\IdeaProjects\txtStatistics\build\libs\pt.txt     | OS:Windows 7
+
+---------RESUTLTS---------
+Words Count =   68599
+Unique Words Count =    13957
+Top 10 Longest Words:   [nierozstrzygniony, rzeczypospolitej, najstraszniejsza, najwymowniejsza, rozstrzygnienie, spokojniejszych, rozstrzygnijcie, najkrzykliws
+zym, szarozielonawej, najsmaczniejszy]
+Top 10 Longest Words Appeared Once:     [nierozstrzygniony, najstraszniejsza, najkrzykliwszym, rozstrzygnienie, najwymowniejsza, rozpierzchniono, rozpierzchnion
+e, rozpierzchniony, rozstrzygnijcie, ingrediencyjami]
+Char Occurance:
+|A|     0.09824527634097546
+|B|     0.019614904595441154
+|C|     0.04563150803162574
+|D|     0.037283220843093476
+|E|     0.07872971915726534
+|F|     0.0013380854511924809
+|G|     0.01592973654308422
+|H|     0.013082812276857338
+|I|     0.09353248349896592
+|J|     0.022710197390891754
+|K|     0.04045302419731119
+|L|     0.02165152653507565
+|M|     0.033719132448733105
+|N|     0.05053989109040949
+|O|     0.07328423915404747
+|P|     0.028832481636256433
+|Q|     6.209213230591551E-6
+|R|     0.04906830755475895
+|S|     0.050542995697024785
+|T|     0.03639219874450338
+|U|     0.024461195521918975
+|V|     3.104606615295776E-5
+|W|     0.04925768855829204
+|X|     9.313819845887328E-6
+|Y|     0.04257657512217399
+|Z|     0.07295825545944207
+|0|     9.313819845887328E-6
+|1|     9.313819845887328E-6
+|2|     1.552303307647888E-5
+|3|     1.2418426461183103E-5
+|4|     6.209213230591551E-6
+|5|     6.209213230591551E-6
+|6|     3.1046066152957757E-6
+|7|     6.209213230591551E-6
+|8|     3.104606615295776E-5
+|9|     1.8627639691774655E-5
+```

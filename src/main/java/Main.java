@@ -8,8 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        CommandLineApp cla = new CommandLineApp();
-        new CommandLine(cla).parse(args);
-        cla.run();
+        if (args.length > 0) {
+            CommandLineApp cla = new CommandLineApp();
+            new CommandLine(cla).parse(args);
+            cla.run();
+        } else {
+            System.out.println("This programme is not running without entry parameters!");
+        }
+
     }
 }

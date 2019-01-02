@@ -21,18 +21,13 @@ public class TopTenLongestWords implements Analyzer {
   @Override
   public List<String> analyze(String text) {
 
-    String[] words = text.replaceAll("[0-9]|[«…»—–/\"'.,!?;:*+<>(){}\\[\\]\\+\\-]", " ").toLowerCase().split("\\s+");
+    String[] words = text.replaceAll(RegexPatterns.REGEX, " ").toLowerCase().split("\\s+");
 
-    List<String> tempLst = List.of(words);
-
-    topTenLongestWords = tempLst
+    return topTenLongestWords = List.of(words)
             .stream()
             .distinct()
             .sorted(Comparator.comparing(String::length).reversed())
             .limit(10)
             .collect(Collectors.toList());
-
-    return topTenLongestWords;
-
   }
 }

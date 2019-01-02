@@ -1,7 +1,6 @@
 package analyzer;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Created by Grzegorz Chrzaszczyk on 02-01-2019  10:25 AM
@@ -9,6 +8,11 @@ import java.util.stream.Collectors;
 public class UniqueWordCountAnalyzer implements Analyzer {
 
   private int uniqueWordsCount;
+  private Map<String, Integer> wordsOccurrence = new HashMap<>();
+
+  public Map<String, Integer> getWordsOccurrence() {
+    return wordsOccurrence;
+  }
 
   @Override
   public String toString() {
@@ -18,21 +22,19 @@ public class UniqueWordCountAnalyzer implements Analyzer {
   @Override
   public Integer analyze(String text) {
 
-    String[] words = text.replaceAll("[0-9]|[«…»—–/\"'.,!?;:*+<>(){}\\[\\]\\+\\-]", " ").toLowerCase().split("\\s+");
-
-    Map<String, Integer> wordsOccurance = new HashMap<>();
+    String[] words = text.replaceAll(RegexPatterns.REGEX, " ").toLowerCase().split("\\s+");
 
     for (String word : words) {
       //Get the character
-      Integer cnt = wordsOccurance.get(word);
+      Integer cnt = wordsOccurrence.get(word);
       if (cnt == null) {
-        wordsOccurance.put(word, 1);
+        wordsOccurrence.put(word, 1);
       } else {
-        wordsOccurance.put(word, cnt + 1);
+        wordsOccurrence.put(word, cnt + 1);
       }
     }
 
-   uniqueWordsCount = wordsOccurance.size();
+   uniqueWordsCount = wordsOccurrence.size();
 
     return uniqueWordsCount;
   }
