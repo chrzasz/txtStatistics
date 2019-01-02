@@ -1,9 +1,6 @@
 package commandline;
 
-import analyzer.Analyzer;
-import analyzer.MultiAnalyzer;
-import analyzer.TopTenLongestWords;
-import analyzer.WordCountAnalyzer;
+import analyzer.*;
 import picocli.CommandLine.*;
 
 import java.io.*;
@@ -38,6 +35,7 @@ public class CommandLineApp {
 
         ArrayList<Analyzer> analyzers = new ArrayList<>();
         analyzers.add(new WordCountAnalyzer());
+        analyzers.add(new UniqueWordCountAnalyzer());
         analyzers.add(new TopTenLongestWords());
         MultiAnalyzer multiAnalyzer = new MultiAnalyzer(analyzers);
 
@@ -90,6 +88,7 @@ public class CommandLineApp {
         data = new String(Files.readAllBytes(Paths.get(fileName)));
         return data;
     }
+
 
 
 }// END CommandLineApp

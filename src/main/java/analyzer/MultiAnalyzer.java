@@ -21,13 +21,12 @@ public class MultiAnalyzer {
   }
 
   public void showResult() {
+    System.out.println("---------RESUTLTS---------");
     for (Analyzer analizer : analyzers) {
-      System.out.println("Result: " + analizer);
+      System.out.println(analizer);
     }
 
   }
-
-
 
 
 }
