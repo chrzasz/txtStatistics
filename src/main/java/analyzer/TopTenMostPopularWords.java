@@ -1,5 +1,6 @@
 package analyzer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -7,7 +8,8 @@ import java.util.List;
  */
 public class TopTenMostPopularWords implements Analyzer{
 
-  private List<String>
+  private List<String> top = new ArrayList<>();
+
 
   @Override
   public Object analyze(String text) {
