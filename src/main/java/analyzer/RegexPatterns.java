@@ -15,4 +15,7 @@ public class RegexPatterns {
 
   public static final String WHITE_SPACES = "\\s+";
 
+
+  public static final String SPLIT = "[^A-ZÃ…Ã„Ã–a-zÃ¥Ã¤Ã¶]+";
+
 }
