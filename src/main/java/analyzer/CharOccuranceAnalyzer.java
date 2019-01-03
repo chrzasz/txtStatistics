@@ -2,7 +2,6 @@ package analyzer;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,8 +29,8 @@ public class CharOccuranceAnalyzer implements Analyzer {
   @Override
   public Map<Character, Double> analyze(String text) {
 
-    String words = text.replaceAll(RegexPatterns.REGEX, "").toUpperCase();
-//    words = words.replaceAll(RegexPatterns.WHITE_SPACES, "");
+    String words = text.replaceAll(RegexPatterns.CUSTOM, "").toUpperCase();
+    words = words.replaceAll(RegexPatterns.WHITE_SPACES, "");
 
     char[] characters = words.toCharArray();
     for (char c : characters) {

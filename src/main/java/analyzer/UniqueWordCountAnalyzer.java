@@ -16,13 +16,15 @@ public class UniqueWordCountAnalyzer implements Analyzer {
 
   @Override
   public String toString() {
-    return "Unique Words Count =\t" + uniqueWordsCount;
+    return "NUMBER OF UNIQUE WORDS:\t" + uniqueWordsCount;
   }
 
   @Override
   public Integer analyze(String text) {
 
-    String[] words = text.replaceAll(RegexPatterns.REGEX, " ").toLowerCase().split("\\s+");
+    String[] words = text.replaceAll(RegexPatterns.CUSTOM, " ")
+            .toLowerCase()
+            .split(RegexPatterns.WHITE_SPACES);
 
     for (String word : words) {
       //Get the character

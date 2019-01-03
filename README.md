@@ -67,54 +67,60 @@ NUMBER OF WORDS: 68367
 najstraszniejsza, najprzywiązańsza, najpiękniejszego, dźwięcznostrunne
 ```
 
-sample output:
+my console output:
 ```
 C:\Users\admin\IdeaProjects\txtStatistics\build\libs>java -jar txtStatistics-1.0-SNAPSHOT.jar pt.txt -v -V
 Version:1.0.0
 Analyzing file: C:\Users\admin\IdeaProjects\txtStatistics\build\libs\pt.txt     | OS:Windows 7
 
+"C:\Program Files\Java\jdk-10.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2018.2.5\lib\idea_rt.jar=53171:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2018.2.5\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\admin\IdeaProjects\txtStatistics\out\production\classes;C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-simple\1.6.4\6998922e7ac5ab307bd51c233776a67da0031298\slf4j-simple-1.6.4.jar;C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.25\da76ca59f6a57ee3102f8f9bd9cee742973efa8a\slf4j-api-1.7.25.jar;C:\Users\admin\.gradle\caches\modules-2\files-2.1\info.picocli\picocli\3.8.2\ad74665a1b8d10b45e7c4bfa6c709dc3b3d9ca78\picocli-3.8.2.jar Main pt.txt -v -V
+Version:1.0.0
+Analyzing file: C:\Users\admin\IdeaProjects\txtStatistics\pt.txt	| OS:Windows 7
+
 ---------RESUTLTS---------
-Words Count =   68599
-Unique Words Count =    13957
-Top 10 Longest Words:   [nierozstrzygniony, rzeczypospolitej, najstraszniejsza, najwymowniejsza, rozstrzygnienie, spokojniejszych, rozstrzygnijcie, najkrzykliws
-zym, szarozielonawej, najsmaczniejszy]
-Top 10 Longest Words Appeared Once:     [nierozstrzygniony, najstraszniejsza, najkrzykliwszym, rozstrzygnienie, najwymowniejsza, rozpierzchniono, rozpierzchnion
-e, rozpierzchniony, rozstrzygnijcie, ingrediencyjami]
+NUMBER OF WORDS:	68367
+NUMBER OF UNIQUE WORDS:	18848
+10 MOST POPULAR WORDS:	[i, w, się, z, na, nie, jak, a, do, że]
+10 LONGEST WORDS:	[niebezpieczeństwach, białopiotrowiczowi, najprzykładniejszy, niebezpieczeństwem, nierozstrzygniony, białopiotrowiczem, niebezpieczeństwo, niebezpieczeństwa, rzeczypospolitej, najpiękniejszego]
+10 LONGEST WORDS USED ONLY ONCE	[niebezpieczeństwach, najprzykładniejszy, białopiotrowiczowi, białopiotrowiczem, niebezpieczeństwa, nierozstrzygniony, najpiękniejszego, dziewięćdziesiąt, dźwięcznostrunne, najstraszniejsza]
 Char Occurance:
-|A|     0.09824527634097546
-|B|     0.019614904595441154
-|C|     0.04563150803162574
-|D|     0.037283220843093476
-|E|     0.07872971915726534
-|F|     0.0013380854511924809
-|G|     0.01592973654308422
-|H|     0.013082812276857338
-|I|     0.09353248349896592
-|J|     0.022710197390891754
-|K|     0.04045302419731119
-|L|     0.02165152653507565
-|M|     0.033719132448733105
-|N|     0.05053989109040949
-|O|     0.07328423915404747
-|P|     0.028832481636256433
-|Q|     6.209213230591551E-6
-|R|     0.04906830755475895
-|S|     0.050542995697024785
-|T|     0.03639219874450338
-|U|     0.024461195521918975
-|V|     3.104606615295776E-5
-|W|     0.04925768855829204
-|X|     9.313819845887328E-6
-|Y|     0.04257657512217399
-|Z|     0.07295825545944207
-|0|     9.313819845887328E-6
-|1|     9.313819845887328E-6
-|2|     1.552303307647888E-5
-|3|     1.2418426461183103E-5
-|4|     6.209213230591551E-6
-|5|     6.209213230591551E-6
-|6|     3.1046066152957757E-6
-|7|     6.209213230591551E-6
-|8|     3.104606615295776E-5
-|9|     1.8627639691774655E-5
-```
+|À|	2.818465458296576E-6
+|Ł|	0.028421405681456832
+|A|	0.08919033942782856
+|B|	0.01780706476551753
+|Ń|	0.0018348210133510836
+|C|	0.041425805306042895
+|Ą|	0.013511723407074513
+|D|	0.03384695168867807
+|E|	0.07147346555696382
+|Æ|	5.636930916593152E-6
+|F|	0.0012147586125258302
+|Ć|	0.005512918436428128
+|G|	0.014461546266520542
+|H|	0.011877013441262355
+|É|	1.2119401470675287E-4
+|I|	0.08491190886213135
+|J|	0.020617074827437732
+|K|	0.0367246049216009
+|L|	0.019655978106159107
+|M|	0.030611353342552116
+|N|	0.045881799195612916
+|O|	0.06652987714310815
+|P|	0.026175088711195647
+|Q|	5.636930916593152E-6
+|R|	0.0445458465683794
+|Ó|	0.008765427575302662
+|S|	0.045884617661071214
+|T|	0.03303805210214639
+|U|	0.022206689345916162
+|V|	2.818465458296576E-5
+|W|	0.04471777296133561
+|X|	8.455396374889728E-6
+|Ę|	0.015594569380755865
+|Y|	0.038652435295077114
+|Ś|	0.007313917864279798
+|Z|	0.0662339382699868
+|Ź|	0.0011781185615679743
+|Ż|	0.010011189307869858
+
+Process finished with exit code 0

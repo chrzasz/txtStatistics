@@ -1,10 +1,7 @@
 import analyzer.WordCountAnalyzer;
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Created by Grzegorz Chrzaszczyk on 09-12-2018  03:40 PM
@@ -16,11 +13,7 @@ public class AnalyzerTest {
     public void WordCountTest() {
         WordCountAnalyzer wordCountAnalyzer = new WordCountAnalyzer();
         String test = "Ala has cat ala";
-        Map<String, Integer> mapValues = new HashMap<>();
-        mapValues.put("ala",2);
-        mapValues.put("has",1);
-        mapValues.put("cat",1);
-        assertEquals(mapValues, wordCountAnalyzer.analyze(test));
+        assertTrue(4 == wordCountAnalyzer.analyze(test));
     }
 
 

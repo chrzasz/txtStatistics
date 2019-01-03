@@ -31,10 +31,10 @@ public class CommandLineApp {
 
     ArrayList<Analyzer> analyzers = new ArrayList<>();
     analyzers.add(new WordCountAnalyzer());
-    analyzers.add(new TopTenMostPopularWords());
     analyzers.add(new UniqueWordCountAnalyzer());
+    analyzers.add(new TopTenMostPopularWords());
     analyzers.add(new TopTenLongestWords());
-    analyzers.add(new TopTenLongestWordsAppearedOnce());
+    analyzers.add(new TopTenLongestWordsUsedOnce());
     analyzers.add(new CharOccuranceAnalyzer());
 
     MultiAnalyzer multiAnalyzer = new MultiAnalyzer(analyzers);

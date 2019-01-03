@@ -11,23 +11,27 @@ import java.util.stream.Stream;
  */
 public class TopTenLongestWords implements Analyzer {
 
-  private List<String> topTenLongestWords;
+  private List<String> longestWords;
 
   @Override
   public String toString() {
-    return "Top 10 Longest Words:\t" + topTenLongestWords;
+    return "10 LONGEST WORDS:\t" + longestWords;
   }
 
   @Override
   public List<String> analyze(String text) {
 
-    String[] words = text.replaceAll(RegexPatterns.REGEX, " ").toLowerCase().split("\\s+");
+    String[] words = text.replaceAll(RegexPatterns.CUSTOM, " ")
+            .toLowerCase()
+            .split(RegexPatterns.WHITE_SPACES);
 
-    return topTenLongestWords = List.of(words)
+    longestWords = List.of(words)
             .stream()
             .distinct()
             .sorted(Comparator.comparing(String::length).reversed())
             .limit(10)
             .collect(Collectors.toList());
+
+    return longestWords;
   }
 }

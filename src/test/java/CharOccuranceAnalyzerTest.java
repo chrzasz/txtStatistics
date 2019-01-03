@@ -13,11 +13,10 @@ public class CharOccuranceAnalyzerTest {
     @Test
     public void charOccuranceAnalyzerTest() {
         CharOccuranceAnalyzer charOccuranceAnalyzer = new CharOccuranceAnalyzer();
-        String test = "Ala has cat ala";
-        Map<Character, Integer> mapValues = new HashMap<>();
-        mapValues.put('A',1);
-        mapValues.put('l',2);
-        mapValues.put('a',5);
+        String test = "Ala";
+        Map<Character, Double> mapValues = new HashMap<>();
+        mapValues.put('A',(double)2/3);
+        mapValues.put('L',(double)1/3L);
         assertEquals(mapValues, charOccuranceAnalyzer.analyze(test));
     }
 }

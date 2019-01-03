@@ -1,8 +1,6 @@
 package analyzer;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Grzegorz Chrzaszczyk on 09-12-2018  03:30 PM
@@ -10,11 +8,10 @@ import java.util.stream.Stream;
 public class WordCountAnalyzer implements Analyzer {
 
   private int wordsCount;
-  private int uniqueWordsCount;
 
   @Override
   public String toString() {
-    return ("Words Count =\t" + wordsCount);
+    return ("NUMBER OF WORDS:\t" + wordsCount);
   }
 
   @Override
@@ -22,7 +19,9 @@ public class WordCountAnalyzer implements Analyzer {
 
     Map<String, Integer> wordsOccurance = new HashMap<>();
 
-    String[] words = text.replaceAll("[0-9]|[«…»—–/\"'.,!?;:*+<>(){}\\[\\]\\+\\-]", " ").toLowerCase().split("\\s+");
+    String[] words = text.replaceAll(RegexPatterns.CUSTOM, " ")
+            .toLowerCase()
+            .split(RegexPatterns.WHITE_SPACES);
 
     for (String word : words) {
       //Get the character
@@ -34,31 +33,14 @@ public class WordCountAnalyzer implements Analyzer {
       }
     }
 
-    return wordsCount = wordsOccurance
+    wordsCount = wordsOccurance
             .values()
             .parallelStream()
-//            .sorted()
             .mapToInt(Integer::intValue)
             .sum();
 
-
-
-
-//    Stream<String> stream = Arrays.stream(words);
-//    stream.forEach(s -> addToHashMap(s));
-//    wordsCount = wordsMap.values()
-//            .stream()
-//            .mapToInt(Integer::intValue)
-//            .sum();
-//    return getWordsCount();
-
-
+    return wordsCount;
   }
-
-
-
-
-
 }
 
 
